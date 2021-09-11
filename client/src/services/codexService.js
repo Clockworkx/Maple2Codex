@@ -7,9 +7,11 @@ const getAll = () => {
   return request.then((response) => response.data);
 };
 
-// const getItem = () => {
-//   const request =
-// }
+const getItem = (id) => {
+  console.log(`${baseUrl}/${id}`);
+  const request = axios.get(`${baseUrl}/${id}`);
+  return request.then((response) => response.data);
+};
 
 const create = (person) => {
   const request = axios.post(baseUrl, person);
@@ -31,6 +33,7 @@ const change = (id, person) => {
 
 export default {
   getAll,
+  getItem,
   create,
   deletePerson,
   change,
