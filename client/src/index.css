@@ -6,3 +6,38 @@ h1 {
 .person {
   color: green;
 }
+
+body {
+  background: #332d2d;
+}
+
+.site {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "search"
+    "resultsDisplay"
+    "itemView";
+}
+
+.header {
+  grid-area: header;
+  background-color: green;
+}
+
+.search {
+  grid-area: search;
+  background-color: indigo;
+}
+
+.resultsDisplay {
+  grid-area: resultsDisplay;
+  background-color: fuchsia;
+  width: 200px;
+  height: 200px;
+}
+
+.itemView {
+  grid-area: itemView;
+  background-color: gold;
+}

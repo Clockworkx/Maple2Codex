@@ -3,11 +3,15 @@ import personService from "./services/persons";
 
 const Search = ({ handleSearchChange }) => {
   return (
-    <div>
-      Search for a Person
+    <div className="search">
+      Enter Id
       <input onChange={handleSearchChange} />
     </div>
   );
+};
+
+const ResultsDisplay = () => {
+  return <div class="resultsDisplay">content</div>;
 };
 
 //props contains everything passed into <PersonForm onChange="test" spark=1337/>
@@ -30,6 +34,7 @@ const PersonForm = (props) => {
     </div>
   );
 };
+
 const NumberDisplay = ({ personsFiltered, handleDelete }) => {
   return (
     <div>
@@ -185,9 +190,12 @@ const App = () => {
 
   return (
     <div>
-      <h1>Phonebook</h1>
-      <Notification notificationDetails={notification} />
+      <h1 className="header">Maple Codex</h1>
       <Search handleSearchChange={handleSearchChange} />
+      <p>{searchName}</p>
+      <ResultsDisplay />
+      {/* <Notification notificationDetails={notification} />
+
       <h2>Add a new</h2>
       <PersonForm
         addName={addName} //pass in function
@@ -200,7 +208,7 @@ const App = () => {
       <NumberDisplay
         personsFiltered={personsFiltered}
         handleDelete={handleDelete}
-      />
+      /> */}
     </div>
   );
 };
