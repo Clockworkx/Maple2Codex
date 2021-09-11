@@ -7,9 +7,9 @@ const getAll = () => {
   return request.then((response) => response.data);
 };
 
-cont getItem = () => {
-  const request = 
-}
+// const getItem = () => {
+//   const request =
+// }
 
 const create = (person) => {
   const request = axios.post(baseUrl, person);

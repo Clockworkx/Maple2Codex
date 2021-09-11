@@ -21,13 +21,27 @@ app.use(
 );
 
 app.get("/", (request, response) => {
-  response.send("<h1>Seite wäre hier</h1>");
+  response.send("<h1>Root directory</h1>");
 });
 
-app.get("/api/persons", (request, response) => {
+app.get("/api/codex", (request, response) => {
   //read from xml....
   //return xml entry for item id
-  Person.find({}).then((persons) => response.json(persons));
+  //Person.find({}).then((persons) => response.json(persons));
+  response.send("Api response for api/codex");
+});
+
+app.get("/api/codex/:id", (request, response) => {
+  const id = request.params.id;
+  //do xml search here
+  if (true) {
+    response.send({ id: request.params.id, itemInfo: "item info" });
+  } else {
+    res.statusMessage = "reason of error in fetching item";
+    response.status(404).end();
+  }
+
+  //else// response.status(404).end()
 });
 
 app.get("/info", (request, response) => {
@@ -69,6 +83,12 @@ app.post("/api/persons", (request, response) => {
 
   person.save().then((savedPerson) => response.json(person));
 });
+
+const unknownEndpoint = (request, respone) => {
+  response.status(404).send({ error: "unknown endpoint" });
+};
+
+app.use(unknownEndpoint);
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
