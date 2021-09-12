@@ -1,43 +1,89 @@
 h1 {
-  color: green;
-  font-style: italic;
+  font-size: calc(1rem + 3vw);
+  top: 1rem;
+  left: 1rem;
+  color: #ffffffc9;
+  z-index: 15;
+  margin: 0;
+  padding: 0;
 }
 
-.person {
-  color: green;
+html {
+  font-size: calc(1rem+5vw);
+  height: 100%;
 }
 
 body {
-  background: #332d2d;
+  background: rgb(176, 63, 251);
+  background: radial-gradient(
+    circle,
+    rgba(176, 63, 251, 1) 0%,
+    rgba(241, 111, 4, 1) 100%
+  );
+  margin: 0;
 }
 
 .site {
   display: grid;
   grid-template-areas:
-    "header"
-    "search"
+    "navbar "
+    "search "
     "resultsDisplay"
     "itemView";
-}
-
-.header {
-  grid-area: header;
-  background-color: green;
+  grid-template-columns: 1fr;
+  gap: 20px;
 }
 
 .search {
   grid-area: search;
-  background-color: indigo;
+  background-color: #ffffffc9;
+  align-self: center;
+  justify-self: center;
+  min-width: 100vh;
+  min-height: 50px;
 }
 
 .resultsDisplay {
   grid-area: resultsDisplay;
-  background-color: fuchsia;
-  width: 200px;
-  height: 200px;
+  background-color: #ffffffc9;
+  align-self: center;
+  justify-self: center;
+  min-width: 200px;
+  min-height: 200px;
 }
 
 .itemView {
   grid-area: itemView;
   background-color: gold;
+}
+
+/* //prev navbar color : #265b86; */
+.navbar {
+  grid-area: navbar;
+  display: flex;
+  background-color: purple;
+  justify-content: space-around;
+  align-items: center;
+}
+.navbar li {
+  display: inline;
+}
+
+.navbar li a {
+  display: inline-block;
+  /* color: rgb(191, 238, 22); */
+  color: rgb(202, 187, 209);
+  padding: 10px 17px;
+  text-decoration: none;
+}
+
+.navbar-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a:hover {
+  background-color: rgb(0, 195, 255);
+  color: black;
 }

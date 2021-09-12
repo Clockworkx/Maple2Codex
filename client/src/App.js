@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import codexService from "./services/codexService";
+import "./index.css";
 
 const Search = ({ handleSearchChange }) => {
   return (
@@ -45,8 +46,15 @@ const App = () => {
   };
 
   return (
-    <div>
-      <h1 className="header">Maple Codex</h1>
+    <div className="site">
+      <div className="navbar">
+        <h1>Maple Codex</h1>
+        <ul className="navbar-list">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
       <Search handleSearchChange={handleSearchChange} />
       <ResultsDisplay searchResults={searchResults} />
     </div>

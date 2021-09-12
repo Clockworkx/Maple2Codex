@@ -33,6 +33,7 @@ app.get("/api/codex", (request, response) => {
 
 app.get("/api/codex/:id", (request, response) => {
   const id = request.params.id;
+  console.log(id);
   //do xml search here
   if (true) {
     response.send({ id: request.params.id, itemInfo: "item info" });
